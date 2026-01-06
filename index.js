@@ -19,7 +19,8 @@ function parseBlockquote(markdown) {
   // followed by greater-than sign
   // one or more spaces
   // blockquote text
-  const regex = /[\s]*[\>][\s]*([a-z\s]*)/g;
+  const regex = /^[\s*][\>\s+](.*)/;
+  return markdown.replace(regex, `<blockquote>$1</blockquote>`);
 
-  return markdown;
+  // return markdown;
 }
